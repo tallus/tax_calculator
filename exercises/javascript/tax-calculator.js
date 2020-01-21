@@ -1,6 +1,7 @@
 const FuelTypes = require('./fuel-type.js');
 const DIESEL = FuelTypes.FuelType.DIESEL;
 const PETROL = FuelTypes.FuelType.PETROL;
+const TOGGLES = {'older_cheap': "ON", 'older_expensive': "ON"};
 
 const PETROL_TAXES = [
   [1, 50,10],
@@ -60,11 +61,7 @@ let TaxCalculator = class TaxCalculator {
     return tax;
   }
 
-  calculateTax(vehicle, toggles) { 
-    
-    if (toggles == undefined){
-      toggles = {'older_cheap': "ON", 'older_expensive': "ON"};
-    }
+  calculateTax(vehicle, toggles=TOGGLES) { 
     if (toggles != undefined && toggles.older_expensive == 'ON'){
       if (
         vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()
