@@ -63,7 +63,7 @@ let TaxCalculator = class TaxCalculator {
   calculateTax(vehicle, toggles) { 
     
     if (toggles == undefined){
-      toggles = {'older_cheap': "ON"};
+      toggles = {'older_cheap': "ON", 'older_expensive': "ON"};
     }
     if (toggles != undefined && toggles.older_expensive == 'ON'){
       if (
