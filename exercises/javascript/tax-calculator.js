@@ -60,7 +60,12 @@ let TaxCalculator = class TaxCalculator {
     return tax;
   }
 
-  calculateTax(vehicle) {
+  calculateTax(vehicle, toggle='OFF') {
+    if (toggle == 'ON'){
+      if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()){
+        return 450;
+      }
+    }
     if (vehicle.fuelType == PETROL) {
       return this.getTax(vehicle, PETROL_TAXES);
     } else if(vehicle.fuelType == DIESEL) {
