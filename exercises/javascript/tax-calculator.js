@@ -67,6 +67,12 @@ let TaxCalculator = class TaxCalculator {
       && vehicle.listPrice > 40000){
         return 450;
       }
+   
+    }
+    if (
+      vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()
+    && vehicle.listPrice < 40000){
+      return 140;
     }
     if (vehicle.fuelType == PETROL) {
       return this.getTax(vehicle, PETROL_TAXES);
@@ -74,6 +80,8 @@ let TaxCalculator = class TaxCalculator {
       return this.getTax(vehicle, DIESEL_TAXES);
     }
   }
+
+
 }
 
 module.exports = { TaxCalculator: TaxCalculator };
