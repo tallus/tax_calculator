@@ -2,7 +2,7 @@ const { DummyTaxCalculator } = require('./dummy-tax-calculator');
 const { Vehicle } = require('../vehicle');
 const { FuelType } = require('../fuel-type');
 
-describe('Tax calculator on expensive vehicles over 40K after the first year', () => {
+describe.skip('Tax calculator on expensive vehicles over 40K after the first year', () => {
   let taxCalculator = new DummyTaxCalculator();
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
