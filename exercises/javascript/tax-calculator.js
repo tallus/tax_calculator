@@ -60,7 +60,11 @@ let TaxCalculator = class TaxCalculator {
     return tax;
   }
 
-  calculateTax(vehicle, toggles) {
+  calculateTax(vehicle, toggles) { 
+    
+    if (toggles == undefined){
+      toggles = {'older_cheap': "ON"};
+    }
     if (toggles != undefined && toggles.older_expensive == 'ON'){
       if (
         vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()

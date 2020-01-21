@@ -8,8 +8,8 @@ describe('Tax calculator on vehicles after the first year', () => {
 
   it('subsequent years tax for petrol', () => {
     const vehicle = new Vehicle(206, FuelType.PETROL, FIRST_OF_APRIL_2017, 20000);
-    const toggles = {'older_cheap': "ON"};i
-    expect(taxCalculator.calculateTax(vehicle, toggles)).toBe(140);
+   
+    expect(taxCalculator.calculateTax(vehicle)).toBe(140);
   })
 
 /*  it('subsequent years tax for electric', () => {
