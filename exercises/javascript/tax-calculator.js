@@ -62,7 +62,9 @@ let TaxCalculator = class TaxCalculator {
 
   calculateTax(vehicle, toggle='OFF') {
     if (toggle == 'ON'){
-      if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()){
+      if (
+        vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()
+      && vehicle.listPrice > 40000){
         return 450;
       }
     }
