@@ -1,4 +1,5 @@
 language: node_js
-before_scripts: "cd exercises/javascript;npm ci"
+before_install: "cd exercises/javascript"
+before_scripts: "cd exercises/javascript"
 node_js:
  - 10
